@@ -1,9 +1,21 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
-  imports: [],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: "sqlite",
+      database: "productsDB",
+      entities: [__dirname + "/**/*.entity{.ts,.js}"],
+      synchronize: true
+    }),
+    AuthModule,
+    ProductModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
