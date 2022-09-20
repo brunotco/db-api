@@ -2,14 +2,11 @@ import { ConfigModule } from '@nestjs/config';
 import { ConfigService } from "@nestjs/config";
 import { TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from "@nestjs/typeorm";
 
-export default class TypeOrmConfig {
+export class TypeOrmConfig {
     static getOrmConfig(configService: ConfigService): TypeOrmModuleOptions {
-        const type = configService.get('DB_TYPE');
-        const database = configService.get('DB_NAME')
-        console.log(type, database)
         return {
-            type: type,
-            database: database,
+            type: configService.get('DB_TYPE') as any,
+            database: configService.get('DB_NAME') as any,
             entities: [__dirname + "/../../**/*.entity{.ts,.js}"],
             synchronize: true
         }
