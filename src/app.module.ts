@@ -4,15 +4,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from '@modules/auth/auth.module';
 import { ProductModule } from '@modules/product/product.module';
+import { typeOrmConfig } from '@common/config/typeorm.config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: "sqlite",
-      database: "productsDB",
-      entities: [__dirname + "/**/*.entity{.ts,.js}"],
-      synchronize: true
-    }),
+    TypeOrmModule.forRoot(typeOrmConfig),
     AuthModule,
     ProductModule
   ],
