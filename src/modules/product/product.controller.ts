@@ -1,8 +1,8 @@
 import { Controller, UseGuards, Get, Request, Body, Param, Post, Put, Delete } from '@nestjs/common';
 import { UpdateResult, DeleteResult } from 'typeorm';
-import { ProductService } from '../service/product.service';
-import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
-import { ProductEntity } from '../product.entity';
+import { ProductService } from '@modules/product/product.service';
+import { JwtAuthGuard } from '@common/security/jwt.auth.guard';
+import { ProductEntity } from '@modules/product/product.entity';
 
 @Controller('api/v1/products')
 export class ProductController {
