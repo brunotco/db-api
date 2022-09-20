@@ -1,3 +1,80 @@
+## Instructions
+
+### Signup User
+POST: http://localhost:3000/api/v1/auth/signup
+
+Will get response with the created object.
+
+Request body (json):
+```
+{
+    "username": "admin",
+    "password": "admin",
+    "role": "admin"
+}
+```
+
+### Login User
+POST: http://localhost:3000/api/v1/auth/login
+
+Will get response with the access token.
+
+Request body (json):
+```
+{
+    "username": "admin",
+    "password": "admin"
+}
+```
+
+### List Products
+GET: http://localhost:3000/api/v1/products
+
+Will get response with a list of products.
+
+Request with header Authorization passing the bearer token retrieved on the login.
+
+### Create Product
+POST: http://localhost:3000/api/v1/products
+
+Will get response with the created object.
+
+Request with header Authorization (bearer token) and body (json):
+```
+{
+    "name": "Smartphone",
+    "price": 500,
+    "quantity": 4
+}
+```
+
+### Retrieve Product
+GET: http://localhost:3000/api/v1/products/{id}
+
+Will get response with the object that has the given id.
+
+Request with header Authorization (bearer token).
+
+### Update Product
+PUT: http://localhost:3000/api/v1/products/{id}
+
+Will get response with the update result.
+
+Request with header Authorization (bearer token) and body (json) with the changes:
+```
+{
+    "price": 5,
+    "quantity": 20
+}
+```
+
+### Delete Product
+DELETE: http://localhost:3000/api/v1/products/{id}
+
+Will get response with the delete result.
+
+Request with header Authorization (bearer token).
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
