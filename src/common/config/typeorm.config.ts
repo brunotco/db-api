@@ -1,8 +1,10 @@
-import { TypeOrmModuleOptions } from "@nestjs/typeorm";
+import { TypeOrmModuleAsyncOptions } from "@nestjs/typeorm";
 
-export const typeOrmConfig: TypeOrmModuleOptions = {
-    type: "sqlite",
-    database: "productsDB",
-    entities: [__dirname + "/../../**/*.entity{.ts,.js}"],
-    synchronize: true
+export const typeOrmConfig: TypeOrmModuleAsyncOptions = {
+    useFactory: () => ({
+        type: process.env.DB_TYPE as any,
+        database:  process.env.DB_NAME as any,
+        entities: [__dirname + "/../../**/*.entity{.ts,.js}"],
+        synchronize: true
+    })
 };

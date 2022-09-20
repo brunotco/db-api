@@ -13,7 +13,7 @@ import { typeOrmConfigAsync } from '@common/config/typeormasync.config';
     ConfigModule.forRoot({
       envFilePath: 'src/common/envs/.env'
     }),
-    TypeOrmModule.forRootAsync(typeOrmConfigAsync),
+    TypeOrmModule.forRootAsync(typeOrmConfig),
     AuthModule,
     ProductModule
   ],
