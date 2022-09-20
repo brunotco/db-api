@@ -19,18 +19,18 @@ export class ProductService {
         throw new UnauthorizedException();
     }
 
-    async getOne(id: number): Promise<ProductEntity> {
+    async getOne(id: string): Promise<ProductEntity> {
         return this.productRepository.findOneBy({ id });
     }
 
-    async update(id: number, product: ProductEntity, user: UserEntity): Promise<UpdateResult> {
+    async update(id: string, product: ProductEntity, user: UserEntity): Promise<UpdateResult> {
         if (user.role === 'admin') {
             return await this.productRepository.update(id, product);
         }
         throw new UnauthorizedException();
     }
 
-    async delete(id: number, user: UserEntity): Promise<DeleteResult> {
+    async delete(id: string, user: UserEntity): Promise<DeleteResult> {
         if (user.role === 'admin') {
             return await this.productRepository.delete(id);
         }

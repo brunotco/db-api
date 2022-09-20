@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateCol
 @Entity()
 export class ProductEntity {
     @PrimaryGeneratedColumn("uuid")
-    id!: number
+    id: string
 
     @Column()
     name: string
@@ -15,8 +15,8 @@ export class ProductEntity {
     quantity: number
 
     @CreateDateColumn()
-    createdAt: String
+    created: string
 
     @UpdateDateColumn()
-    updtedAt: String
+    updated: string
 }
