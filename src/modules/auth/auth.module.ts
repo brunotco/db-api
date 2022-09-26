@@ -16,13 +16,9 @@ import { AuthController } from '@modules/auth/auth.controller';
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60m' },
     }),
-    TypeOrmModule.forFeature([UserEntity])
+    TypeOrmModule.forFeature([UserEntity]),
   ],
-  providers: [
-    AuthService,
-    LocalStrategy,
-    JwtStrategy
-  ],
-  controllers: [AuthController]
+  providers: [AuthService, LocalStrategy, JwtStrategy],
+  controllers: [AuthController],
 })
 export class AuthModule {}

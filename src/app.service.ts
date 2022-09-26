@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from "@nestjs/config";
-import { TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigService } from '@nestjs/config';
+import {
+  TypeOrmModuleAsyncOptions,
+  TypeOrmModuleOptions,
+} from '@nestjs/typeorm';
 
 @Injectable()
 export class AppService {
-  
   // constructor(private config: ConfigService) {}
 
   getHello(): string {

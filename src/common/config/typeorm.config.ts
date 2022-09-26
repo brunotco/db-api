@@ -1,10 +1,10 @@
-import { TypeOrmModuleAsyncOptions } from "@nestjs/typeorm";
+import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleAsyncOptions = {
-    useFactory: () => ({
-        type: process.env.DB_TYPE as any,
-        database:  process.env.DB_NAME as any,
-        entities: [__dirname + "/../../**/*.entity{.ts,.js}"],
-        synchronize: true
-    })
+  useFactory: () => ({
+    type: process.env.DB_TYPE as any,
+    database: process.env.DB_NAME as any,
+    entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
+    synchronize: true,
+  }),
 };

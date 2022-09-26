@@ -11,11 +11,11 @@ import { typeOrmConfigAsync } from '@common/config/typeormasync.config';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: 'src/common/envs/.env'
+      envFilePath: 'src/common/envs/.env',
     }),
     TypeOrmModule.forRootAsync(typeOrmConfig),
     AuthModule,
-    ProductModule
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
