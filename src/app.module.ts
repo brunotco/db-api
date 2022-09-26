@@ -6,7 +6,6 @@ import { AppService } from './app.service';
 import { AuthModule } from '@modules/auth/auth.module';
 import { ProductModule } from '@modules/product/product.module';
 import { typeOrmConfig } from '@common/config/typeorm.config';
-import { typeOrmConfigAsync } from '@common/config/typeormasync.config';
 
 @Module({
   imports: [
