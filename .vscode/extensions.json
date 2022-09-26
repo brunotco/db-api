@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"Angular.ng-template",
+		"dbaeumer.vscode-eslint",
+		"tal7aouy.icons",
+		"mikestead.dotenv",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"aaron-bond.better-comments"
+	]
+}
