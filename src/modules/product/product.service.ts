@@ -1,8 +1,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult, DeleteResult } from 'typeorm';
-import { UserEntity } from '@modules/auth/user.entity';
-import { ProductEntity } from '@modules/product/product.entity';
+import { UserEntity } from '@entities/user.entity';
+import { ProductEntity } from '@entities/product.entity';
 
 @Injectable()
 export class ProductService {

@@ -12,7 +12,7 @@ import {
 import { UpdateResult, DeleteResult } from 'typeorm';
 import { ProductService } from '@modules/product/product.service';
 import { JwtAuthGuard } from '@common/security/jwt.auth.guard';
-import { ProductEntity } from '@modules/product/product.entity';
+import { ProductEntity } from '@entities/product.entity';
 
 @Controller('api/v1/products')
 export class ProductController {
