@@ -10,7 +10,7 @@ export class AuthService {
   constructor(
     @InjectRepository(UserEntity)
     private userRepository: Repository<UserEntity>,
-    private jwt: JwtService,
+    private jwtService: JwtService,
   ) {}
 
   async signup(user: UserEntity): Promise<UserEntity> {
@@ -35,7 +35,7 @@ export class AuthService {
   async login(user: any): Promise<{ access_token: string }> {
     const payload = { username: user.username, sub: user.id, role: user.role };
     return {
-      access_token: this.jwt.sign(payload),
+      access_token: this.jwtService.sign(payload),
     };
   }
 }
