@@ -5,7 +5,7 @@ import { LocalAuthGuard } from '@common/security/local.auth.guard';
 
 @Controller('api/v1/auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Post('signup')
   async signup(@Body() user: UserEntity): Promise<UserEntity> {

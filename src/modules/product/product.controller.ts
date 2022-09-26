@@ -16,7 +16,7 @@ import { ProductEntity } from '@entities/product.entity';
 
 @Controller('api/v1/products')
 export class ProductController {
-  constructor(private productService: ProductService) {}
+  constructor(private readonly productService: ProductService) {}
 
   @UseGuards(JwtAuthGuard)
   @Get()
