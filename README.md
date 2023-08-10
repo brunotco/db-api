@@ -1,3 +1,8 @@
+# DB API
+Backend API that allows signup and login.
+
+Uses tokens to control access and permissions to the products management.
+
 ## Instructions
 
 ### Signup User
