@@ -5,24 +5,49 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import {
+  IsEmpty,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { UsageType } from '@common/typings/usage-type.enum';
 
 @Entity()
 export class ProductEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @IsOptional()
+  @IsNotEmpty()
+  @IsString()
   @Column()
   name: string;
 
-  @Column()
+  // @IsOptional()
+  // @IsString()
+  // @Column({ nullable: true })
+  // description?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @Column({ default: 0 })
   price: number;
 
-  @Column()
+  @IsOptional()
+  @IsNumber()
+  @Column({ default: 0 })
   quantity: number;
 
-  @CreateDateColumn()
-  created: string;
+  // @Column({ type: 'enum', enum: UsageType, default: UsageType.PERSONAL })
+  // usage: UsageType;
 
+  @IsEmpty()
+  @CreateDateColumn()
+  created: Date;
+
+  @IsEmpty()
   @UpdateDateColumn()
-  updated: string;
+  updated: Date;
 }
